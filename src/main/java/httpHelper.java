@@ -5,7 +5,6 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import static org.apache.http.HttpHeaders.USER_AGENT;
 
 public class httpHelper {
     public static String sendGet(String url) throws Exception {
@@ -16,8 +15,6 @@ public class httpHelper {
         con.setRequestMethod("GET");
 
         //add request header
-        con.setRequestProperty("User-Agent", USER_AGENT);
-
         int responseCode = con.getResponseCode();
         System.out.println("\nSending 'GET' request to URL : " + url);
         System.out.println("Response Code : " + responseCode);
@@ -42,7 +39,6 @@ public class httpHelper {
         HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
         //add reuqest header
         con.setRequestMethod("POST");
-        con.setRequestProperty("User-Agent", USER_AGENT);
         con.setRequestProperty("Content-Type", "application/json");
         con.setDoOutput(true);
         // Send post request
